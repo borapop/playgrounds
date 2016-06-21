@@ -31,7 +31,7 @@ describe('Place model actions', () => {
     
     it('Sould edit place with name \"test\"', () => {
         Place.findOneAndUpdate({name: 'test'},
-            {type: 'stupid shit'}, (err, place) => {
+            {type: 'stupid shit'}, {new: true}, (err, place) => {
             assert.equal(null, err, err);
             assert.equal(place.name, 'test');
             assert.equal(place.type, 'stupid shit');
